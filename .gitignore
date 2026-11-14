@@ -1,0 +1,50 @@
+# ---- Python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# ---- Virtual environments (never commit; rebuild with `uv sync`) -------------
+.venv/
+venv/
+env/
+
+# ---- Tool caches and test output ---------------------------------------------
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# ---- Claude Code: per-person local permissions, not project files -------------
+**/.claude/settings.local.json
+
+# ---- Downloaded models and recordings: never committed -----------------------
+# The speech model lives in the Hugging Face cache, not in the project, and the app
+# deliberately never saves audio. These patterns keep it that way. If a test ever needs a
+# small audio fixture, add a "!path/to/file.wav" exception below.
+*.onnx
+*.nemo
+*.safetensors
+*.wav
+*.flac
+*.mp3
+*.m4a
+
+# ---- Logs and temporary files ------------------------------------------------
+*.log
+*.tmp
+*.bak
+
+# ---- Word and Office lock files (created while a .docx is open) --------------
+# The documents in app/docs/ are kept; only the temporary ~$ copies are ignored.
+~$*
+
+# ---- Windows and editors -----------------------------------------------------
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
